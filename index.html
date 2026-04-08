@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>地理 因果関係ツリー</title>
+    <meta name="description" content="高校地理向けの気候・植生・農業をつなぐ因果関係ツリー" />
+    <meta name="theme-color" content="#0b1220" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" href="icons/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.svg" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="top-bar">
+        <div class="control-row">
+          <button id="backButton" class="btn" type="button">1つ戻る</button>
+          <button id="resetButton" class="btn btn-secondary" type="button">リセット</button>
+        </div>
+        <div>
+          <p class="section-label">選んだ流れ</p>
+          <div id="pathTrail" class="path-trail" aria-live="polite"></div>
+        </div>
+      </header>
+
+      <main class="main-layout">
+        <section class="panel panel-candidates" aria-labelledby="candidateHeading">
+          <div class="panel-head">
+            <h1 id="candidateHeading">今選べる候補</h1>
+            <p id="stepHint" class="hint"></p>
+          </div>
+          <div id="candidateList" class="candidate-list" role="list"></div>
+        </section>
+
+        <aside class="panel panel-detail" aria-labelledby="detailHeading">
+          <div class="panel-head">
+            <h2 id="detailHeading">今選んでいる要素</h2>
+          </div>
+          <article id="detailCard" class="detail-card" aria-live="polite"></article>
+        </aside>
+      </main>
+    </div>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
